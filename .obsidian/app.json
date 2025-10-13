@@ -1,5 +1,6 @@
 {
   "promptDelete": true,
-  "vimMode": false,
-  "focusNewTab": true
+  "vimMode": true,
+  "focusNewTab": true,
+  "showLineNumber": true
 }

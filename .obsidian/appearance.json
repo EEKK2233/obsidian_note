@@ -2,5 +2,10 @@
   "cssTheme": "AnuPpuccin",
   "enabledCssSnippets": [
     "extended-colorschemes"
-  ]
+  ],
+  "interfaceFontFamily": "Cascadia Code,Constantia,Consolas",
+  "textFontFamily": "Cascadia Code,Cascadia Mono,Consolas",
+  "monospaceFontFamily": "Cascadia Code,Cascadia Mono,Consolas",
+  "baseFontSize": 11,
+  "baseFontSizeAction": true
 }
