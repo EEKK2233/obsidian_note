@@ -1,0 +1,213 @@
+{
+  "workspaces": {
+    "ReadAndWrith": {
+      "main": {
+        "id": "ced748335935154d",
+        "type": "split",
+        "children": [
+          {
+            "id": "c97c3a3f4b0341d1",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "e1cc8300d0f1c008",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Linux/command.md",
+                    "mode": "preview",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "command"
+                }
+              }
+            ]
+          },
+          {
+            "id": "6670b2942323cd50",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "599cf40a43da5791",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Linux/command.md",
+                    "mode": "source",
+                    "source": true
+                  },
+                  "icon": "lucide-file",
+                  "title": "command"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "bc655dbd688a73e3",
+        "type": "split",
+        "children": [
+          {
+            "id": "b5bd444a3b9ca8ca",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "165c3928a1115286",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "文件列表"
+                }
+              },
+              {
+                "id": "c3e9b2b355ae16a9",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  },
+                  "icon": "lucide-search",
+                  "title": "搜索"
+                }
+              },
+              {
+                "id": "5bd6fb9e8feca6cb",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300
+      },
+      "right": {
+        "id": "c102e755b57d62cc",
+        "type": "split",
+        "children": [
+          {
+            "id": "63b65293485560df",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "9b92687c24860033",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "learn/1.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks for 1"
+                }
+              },
+              {
+                "id": "2e92e0d0e59e0c99",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "Linux/command.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Outgoing links from 1"
+                }
+              },
+              {
+                "id": "59b0410b88eb1d08",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Tags"
+                }
+              },
+              {
+                "id": "1ccc1fa8673a30a6",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "Linux/command.md",
+                    "followCursor": false,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-list",
+                  "title": "command 的大纲"
+                }
+              },
+              {
+                "id": "b113b8b4c08b47ad",
+                "type": "leaf",
+                "state": {
+                  "type": "git-view",
+                  "state": {},
+                  "icon": "git-pull-request",
+                  "title": "Source Control"
+                }
+              }
+            ],
+            "currentTab": 4
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "bases:创建新数据库": false,
+          "switcher:打开快速切换": false,
+          "graph:查看关系图谱": false,
+          "canvas:新建白板": false,
+          "daily-notes:打开/创建今天的日记": false,
+          "templates:插入模板": false,
+          "command-palette:打开命令面板": false,
+          "obsidian-excalidraw-plugin:新建绘图文件": false,
+          "templater-obsidian:Templater": false,
+          "obsidian-git:Open Git source control": false,
+          "workspaces:管理工作区布局": false
+        }
+      },
+      "active": "599cf40a43da5791",
+      "mtime": "2025-10-13T19:48:30+08:00"
+    }
+  },
+  "active": "ReadAndWrith"
+}

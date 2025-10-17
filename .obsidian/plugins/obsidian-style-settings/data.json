@@ -47,11 +47,17 @@
   "anuppuccin-theme-settings@@anp-toggle-metadata": false,
   "anuppuccin-theme-settings@@anp-toggle-scrollbars": true,
   "anuppuccin-theme-settings@@anp-hide-status-bar": false,
-  "anuppuccin-theme-settings@@anp-code-bg-color@@light": "#4066E9",
-  "anuppuccin-theme-settings@@anp-code-text-color@@light": "#00FFFE",
+  "anuppuccin-theme-settings@@anp-code-text-color@@light": "#000000",
   "anuppuccin-theme-settings@@anp-bold-custom": "anp-bold-lavender",
   "anuppuccin-theme-settings@@list-marker-color@@light": "#FF0000",
   "anuppuccin-theme-settings@@list-marker-color@@dark": "#4066E9",
   "anuppuccin-theme-settings@@anp-italic-custom": "anp-italic-red",
-  "anuppuccin-theme-settings@@anp-highlight-custom": "anp-highlight-yellow"
+  "anuppuccin-theme-settings@@anp-highlight-custom": "anp-highlight-yellow",
+  "anuppuccin-theme-settings@@anp-code-bg-color@@light": "#D1FFFD",
+  "anuppuccin-theme-settings@@anp-list-toggle": true,
+  "anuppuccin-theme-settings@@anp-table-toggle": true,
+  "anuppuccin-theme-settings@@anp-table-width": true,
+  "anuppuccin-theme-settings@@anp-table-auto": true,
+  "anuppuccin-theme-settings@@anp-table-th-highlight": true,
+  "anuppuccin-theme-settings@@anp-latex-block-font-size": 100
 }

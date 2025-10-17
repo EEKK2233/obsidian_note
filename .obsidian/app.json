@@ -1,6 +1,7 @@
 {
   "promptDelete": true,
-  "vimMode": true,
+  "vimMode": false,
   "focusNewTab": true,
-  "showLineNumber": true
+  "showLineNumber": true,
+  "autoConvertHtml": false
 }

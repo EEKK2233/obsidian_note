@@ -4,44 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "c97c3a3f4b0341d1",
+        "id": "9f0f3ad7d324e5d5",
         "type": "tabs",
         "children": [
           {
-            "id": "e1cc8300d0f1c008",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Linux/command.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "command"
-            }
-          }
-        ]
-      },
-      {
-        "id": "6670b2942323cd50",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "599cf40a43da5791",
+            "id": "f46bf98eb28e4094",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Linux/command.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "command"
             }
+          },
+          {
+            "id": "f1999f2a941ea1c4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "数学竞赛/极限函数与连续.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "极限函数与连续"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -133,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "learn/1.md",
+                "file": "Linux/command.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -153,7 +148,7 @@
                 "searchQuery": ""
               },
               "icon": "lucide-tags",
-              "title": "Tags"
+              "title": "标签"
             }
           },
           {
@@ -182,11 +177,12 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -199,14 +195,30 @@
       "command-palette:打开命令面板": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "templater-obsidian:Templater": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "workspaces:管理工作区布局": false
     }
   },
-  "active": "b113b8b4c08b47ad",
+  "active": "f1999f2a941ea1c4",
   "lastOpenFiles": [
-    "2025-10-13.md",
     "Linux/command.md",
+    "数学竞赛/极限函数与连续.md",
+    "数学竞赛",
+    "C++/C++新特性.md",
+    "lambda1.png",
+    "QQ20251013-200406.png",
+    "physics/稳恒磁场.md",
+    "huaweiICT/题库.md",
+    "C++",
+    "physics",
+    "huaweiICT/讯方.md",
+    "ComputerOrganizationAndDesign/Chap4_TheProcessor.md",
+    "huaweiICT",
+    "huaweiICT",
     "未命名.base",
+    "未命名 1.base",
+    "未命名.canvas",
+    "2025-10-13.md",
     "Welcome.md",
     "find my obsidian.md",
     "learn/1.md",

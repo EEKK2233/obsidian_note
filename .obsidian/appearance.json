@@ -3,9 +3,10 @@
   "enabledCssSnippets": [
     "extended-colorschemes"
   ],
-  "interfaceFontFamily": "Cascadia Code,Constantia,Consolas",
-  "textFontFamily": "Cascadia Code,Cascadia Mono,Consolas",
-  "monospaceFontFamily": "Cascadia Code,Cascadia Mono,Consolas",
+  "interfaceFontFamily": "Cascadia Mono,Cascadia Code,Constantia,Consolas",
+  "textFontFamily": "Cascadia Mono,Cascadia Code,Consolas",
+  "monospaceFontFamily": "Cascadia Mono,Cascadia Code,Consolas",
   "baseFontSize": 11,
-  "baseFontSizeAction": true
+  "baseFontSizeAction": true,
+  "theme": "system"
 }

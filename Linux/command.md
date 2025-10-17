@@ -1,7 +1,7 @@
 ---
 data: 2025-10-13
 ---
-## special symbols
+## special symbolsi
 - ~ : HOME_path
 - \* : fuzzy matching
 - | : use the result of the left command as the input for the right content
