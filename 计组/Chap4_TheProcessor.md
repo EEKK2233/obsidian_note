@@ -16,7 +16,7 @@
 > 2. forwarding results as soon as they are available to where they are needed(*forwarding unit*)
 >    (*if value not computed when needed, can't forward backward in time*)**!!!**
 > 3. **Reorder** code to avoid use of load result in the next instruction
-> ![[forwarding_unit.png|**forwarding_unit**]]
+>    ![forwarding_unit](forwarding_unit.png)
 >  >forward A, B:EX hazard *(三种数据来源:reg, mem, EX/MEM(超前查看))*
    > if (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0)and (EX/MEM.RegisterRd =ID/EX.RegisterRs))
    > **ForwardA = 10**
