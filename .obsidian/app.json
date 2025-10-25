@@ -3,5 +3,9 @@
   "vimMode": false,
   "focusNewTab": true,
   "showLineNumber": true,
-  "autoConvertHtml": false
+  "autoConvertHtml": true,
+  "autoPairBrackets": false,
+  "useMarkdownLinks": true,
+  "strictLineBreaks": false,
+  "readableLineLength": true
 }

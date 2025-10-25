@@ -70,7 +70,10 @@ struct divide{  //函数对象类
 
 ```cpp
 std::map<std::string, std::function<int(int, int)>> binops;
-binops.insert({"%", f2});
+binops.insert({"%", mod});//调用lambda;
+binops.insert({"+", add});//调用函数;
+binops.insert({"/", divide{}});//调用类对象;
+
 
 //调用
 binops["%"](10, 5)//调用lambda函数对象

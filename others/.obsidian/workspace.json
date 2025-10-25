@@ -1,24 +1,39 @@
 {
   "main": {
-    "id": "ced748335935154d",
+    "id": "c884a87fb0806e7e",
     "type": "split",
     "children": [
       {
-        "id": "abb9ebb515005721",
+        "id": "6df016847bc9bef4",
         "type": "tabs",
         "children": [
           {
-            "id": "3d024a1da42e4204",
+            "id": "af636bb918c2d0cb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "physics/稳恒磁场.md",
-                "mode": "preview",
-                "source": true
+                "file": "未命名 1.base",
+                "viewName": "表格"
               },
-              "icon": "lucide-file",
-              "title": "稳恒磁场"
+              "icon": "lucide-table",
+              "title": "未命名 1"
+            }
+          }
+        ]
+      },
+      {
+        "id": "eaa237e66fd81c62",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7f16b173b62fc49e",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
             }
           }
         ]
@@ -27,15 +42,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "bc655dbd688a73e3",
+    "id": "00ce9e7cbfe864b8",
     "type": "split",
     "children": [
       {
-        "id": "b5bd444a3b9ca8ca",
+        "id": "6a6954acd50dae45",
         "type": "tabs",
         "children": [
           {
-            "id": "165c3928a1115286",
+            "id": "a62d8009f10f9c4b",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +63,7 @@
             }
           },
           {
-            "id": "c3e9b2b355ae16a9",
+            "id": "90848d13dd2cbd47",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,13 +80,13 @@
             }
           },
           {
-            "id": "5bd6fb9e8feca6cb",
+            "id": "9bfede7a81e377f4",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {},
               "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "title": "书签"
             }
           }
         ]
@@ -81,20 +96,20 @@
     "width": 300
   },
   "right": {
-    "id": "c102e755b57d62cc",
+    "id": "d93f55fd19bad5da",
     "type": "split",
     "children": [
       {
-        "id": "63b65293485560df",
+        "id": "8e35cb54f9b59995",
         "type": "tabs",
         "children": [
           {
-            "id": "9b92687c24860033",
+            "id": "02f457c130c1e1f7",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Linux/command.md",
+                "file": "未命名 1.base",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +119,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "command 的反向链接列表"
+              "title": "未命名 1 的反向链接列表"
             }
           },
           {
-            "id": "2e92e0d0e59e0c99",
+            "id": "c124b92962dcaea7",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Linux/command.md",
+                "file": "未命名 1.base",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "command 的出链列表"
+              "title": "未命名 1 的出链列表"
             }
           },
           {
-            "id": "59b0410b88eb1d08",
+            "id": "d6e1cc477f3f8c6e",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,98 +152,43 @@
             }
           },
           {
-            "id": "1ccc1fa8673a30a6",
+            "id": "82ad449ba44947ac",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "physics/稳恒磁场.md",
+                "file": "未命名 1.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "稳恒磁场 的大纲"
-            }
-          },
-          {
-            "id": "b113b8b4c08b47ad",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "title": "未命名 1 的大纲"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "templater-obsidian:Templater": false,
-      "obsidian-git:Open Git source control": false,
-      "workspaces:管理工作区布局": false
+      "bases:创建新数据库": false
     }
   },
-  "active": "3d024a1da42e4204",
+  "active": "af636bb918c2d0cb",
   "lastOpenFiles": [
-    "C++/2-cmake构建练习步骤说明-linux.MD",
-    "计组/Chap_4 check.md",
-    "计组/Chap4_TheProcessor.md",
-    "C++/2-cmake构建练习步骤说明-windows.MD",
-    "C++/实验中间结果保存与恢复（Git 最简教学版）.md",
-    "C++/git.md",
-    "C++/C++新特性.md",
-    "计组/lab_6.md",
-    "others/未命名 1.base",
-    "others/未命名.base",
-    "others/实验中间结果保存与恢复（Git 最简教学版）.md",
-    "others/欢迎.md",
-    "others",
-    "Linux/command.md",
-    "Branch_Hazards.png",
-    "4_check_4_13_1.png",
-    "datapath_with_forward.png",
-    "forwarding_unit.png",
-    "搜狗截图20251020194836.png",
-    "多维随机变量.md",
-    "概率论",
-    "数学竞赛/极限函数与连续.md",
-    "数学竞赛",
-    "lambda1.png",
-    "QQ20251013-200406.png",
-    "physics/稳恒磁场.md",
-    "huaweiICT/题库.md",
-    "C++",
-    "physics",
-    "huaweiICT/讯方.md",
-    "huaweiICT",
-    "huaweiICT",
     "未命名.base",
-    "未命名.canvas",
-    "2025-10-13.md",
-    "Welcome.md",
-    "find my obsidian.md",
-    "learn/1.md",
-    "learn/2.md",
-    "2025-04-20.md",
-    "create a link.md",
-    "Untitled 3.canvas",
-    "Untitled 2.canvas",
-    "Untitled 1.canvas",
-    "Untitled.canvas"
+    "未命名 1.base",
+    "实验中间结果保存与恢复（Git 最简教学版）.md",
+    "欢迎.md"
   ]
 }
