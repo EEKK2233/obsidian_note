@@ -1,4 +1,4 @@
-**1.1**
+#### **1.1**
 For each code sequence below, state whether it must stall, can avoid stalls using only forwarding, or can execute without stalling or forwarding.
 
 | Seauence 1                                          | Sequence 2                                                                    | Sequence 3                                                                                                                |
@@ -9,10 +9,11 @@ For each code sequence below, state whether it must stall, can avoid stalls usin
    >Sequence 2: Bypass the first add result written into $t1.
    >Sequence 3: No stall or bypass required.
 
-**4.13.1** If there is no forwarding or hazard detection, insert nopsto ensure correct execution.
+#### **4.13.1**
+If there is no forwarding or hazard detection, insert nopsto ensure correct execution.
 ![](4_check_4_13_1.png)
 
-**4.9**
+#### **4.9**
 In this exercise,we examineh ow data dependences affect execution in the basic 5-stage pipeline described in Section4.5.Problems in this exercise refer to the following sequence of instructions:
 > orr1,r2,r3<br>orr2,r1,r4<br>orr1,r1,r2
 
@@ -41,3 +42,11 @@ Also,assumethefollowingcycletimesforeachoftheoptionsrelatedtoforwarding:
 |:---|---|
 |ORR1,R2,R3<br>ORR2,R1,R4<br>nop<br>nop//to load R1 from reg<br>ORR1,R1,R2|ALU-ALU forwarding of R1 from I1<br>ALU-ALU forwarding of R2 from I2|
 6. What is the total execution time of this instruction sequence with only ALU-ALU forwarding? What is the speedup over a no-forwarding pipeline?
+#### 4.14
+Thisexerciseisintendedtohelpyouunderstandtherelationshipbetweendelayslots,controlhazards,andbranchexecutioninapipelinedprocessor.Inthisexercise,weassumethatthefollowingMIPScodeisexecutedonapipelinedprocessorwitha5-stagepipeline,fullforwarding,andapredict-takenbranchpredictor:
+lwr2,0(r1)
+label1: beq r2,r0,label2 # not taken once, thentaken
+lwr3,0(r2)
+beq r3,r0,label1 # taken
+addr1,r3,r1
+label2:swr1,0(r2)

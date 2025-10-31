@@ -6,7 +6,7 @@
   "interfaceFontFamily": "Cascadia Mono,Cascadia Code,Constantia,Consolas",
   "textFontFamily": "Cascadia Mono,Cascadia Code,Consolas",
   "monospaceFontFamily": "Cascadia Mono,Cascadia Code,Consolas",
-  "baseFontSize": 17,
+  "baseFontSize": 12,
   "baseFontSizeAction": true,
   "theme": "system"
 }

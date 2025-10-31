@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "abb9ebb515005721",
+        "id": "5edb1304d9fcb81d",
         "type": "tabs",
         "children": [
           {
-            "id": "3d024a1da42e4204",
+            "id": "66e1a702fdafcabd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "physics/稳恒磁场.md",
-                "mode": "preview",
-                "source": true
+                "file": "静电学-稳恒磁场.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "稳恒磁场"
+              "title": "静电学-稳恒磁场"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "physics/稳恒磁场.md",
+                "file": "静电学-稳恒磁场.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "稳恒磁场 的大纲"
+              "title": "静电学-稳恒磁场 的大纲"
             }
           },
           {
@@ -183,49 +183,55 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "3d024a1da42e4204",
+  "active": "66e1a702fdafcabd",
   "lastOpenFiles": [
-    "C++/2-cmake构建练习步骤说明-linux.MD",
-    "计组/Chap_4 check.md",
+    "physics/静电学_1.md",
+    "静电学-稳恒磁场.md",
+    "physics/静电学.md",
+    "physics/稳恒磁场_1.md",
+    "稳恒磁场.md",
     "计组/Chap4_TheProcessor.md",
+    "计组/数据冒险-分支冒险.md",
+    "计组/A Multicycle Implementation(多周期处理器设计).md",
+    "4_check_4_13_1.png",
+    "多周期数据通路.png",
+    "Load指令执行过程.png",
+    "C++/test.md",
+    "Cmake/Cmake常用指令.md",
+    "Cmake/Cmake学习指南.md",
+    "Cmake",
+    "C++/2-cmake构建练习步骤说明-linux.md",
+    "Linux/command.md",
     "C++/2-cmake构建练习步骤说明-windows.MD",
     "C++/实验中间结果保存与恢复（Git 最简教学版）.md",
-    "C++/git.md",
     "C++/C++新特性.md",
+    "Pasted image 20251028181144.png",
+    "计组/Chap_4 check.md",
     "计组/lab_6.md",
-    "others/未命名 1.base",
-    "others/未命名.base",
-    "others/实验中间结果保存与恢复（Git 最简教学版）.md",
-    "others/欢迎.md",
-    "others",
-    "Linux/command.md",
-    "Branch_Hazards.png",
-    "4_check_4_13_1.png",
-    "datapath_with_forward.png",
     "forwarding_unit.png",
+    "datapath_with_forward.png",
+    "Branch_Hazards.png",
     "搜狗截图20251020194836.png",
-    "多维随机变量.md",
+    "计组/Chap_2 Instructions(MIPS).md",
+    "C++/git.md",
+    "others/欢迎.md",
+    "others/实验中间结果保存与恢复（Git 最简教学版）.md",
+    "others/未命名.base",
+    "others/未命名 1.base",
+    "概率论/多维随机变量.md",
+    "lambda1.png",
+    "others",
     "概率论",
     "数学竞赛/极限函数与连续.md",
     "数学竞赛",
-    "lambda1.png",
     "QQ20251013-200406.png",
-    "physics/稳恒磁场.md",
     "huaweiICT/题库.md",
     "C++",
     "physics",
     "huaweiICT/讯方.md",
     "huaweiICT",
     "huaweiICT",
-    "未命名.base",
     "未命名.canvas",
-    "2025-10-13.md",
-    "Welcome.md",
-    "find my obsidian.md",
-    "learn/1.md",
-    "learn/2.md",
-    "2025-04-20.md",
-    "create a link.md",
     "Untitled 3.canvas",
     "Untitled 2.canvas",
     "Untitled 1.canvas",
