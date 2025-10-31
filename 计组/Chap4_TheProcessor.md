@@ -16,7 +16,7 @@
 > 2. forwarding results as soon as they are available to where they are needed(*forwarding unit*)
 >    (*if value not computed when needed, can't forward backward in time*)**!!!**
 > 3. **Reorder** code to avoid use of load result in the next instruction
-> ![[forwarding_unit.png|**forwarding_unit**]]
+>    ![forwarding_unit](forwarding_unit.png)
 >  >forward A, B:EX hazard *(三种数据来源:reg, mem, EX/MEM(超前查看))*
    > if (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0)and (EX/MEM.RegisterRd =ID/EX.RegisterRs))
    > **ForwardA = 10**
@@ -142,6 +142,7 @@
 - 可能需要 “手动” 完成（部分指令的执行流程）
 - （该方式）简化了硬件设计，但会使处理程序软件更为复杂
 - 对于复杂的多发射乱序流水线而言，此方式不可行
+<<<<<<< HEAD
 
 # A Multicycle Implementation(多周期处理器设计)
 >[!note] 主要内容
@@ -210,3 +211,11 @@ Clock Skew
 [^15]: **multiple-issue out-of-order pipelines（多发射乱序流水线）**：复杂的 CPU 流水线架构，“多发射” 指每个周期可同时发射多条指令进入流水线，“乱序” 指指令执行和完成的顺序可能与指令在程序中的原始顺序不一致。此类流水线因指令并行度高、执行顺序复杂，无法通过 “非精确异常” 的简单停止 + 保存状态方式保证程序正确性，故不适用该异常处理机制。
 [^16]: Instruction Set Architecture（ISA，指令集架构）是**计算机硬件（主要是 CPU）与软件之间的接口规范**，它定义了软件可以向硬件发出的指令类型、操作方式及数据格式，决定了软件如何控制硬件工作
 [^17]: **延迟损失时间片C**：发生转移时，给流水线带来的延迟损失
+=======
+#### 术语补充说明（适配计算机体系结构语境）
+- **Pipelining（流水线）**：CPU 核心技术之一，将一条指令的执行拆解为取指、译码、执行、访存、写回等多个阶段，让不同指令的不同阶段在流水线中并行重叠执行，从而提升指令吞吐量。
+- **Precise exceptions（精确异常）**：一种异常处理标准，要求异常发生后，能准确定位到 “引发异常的指令”，且确保该指令之前的所有指令已正确执行，该指令及之后的所有指令均未对系统状态（如寄存器、内存）产生错误修改，是保障程序正确性的关键机制。
+- **Out-of-order completion（乱序完成）**：复杂流水线（如超标量流水线）的特性，指由于不同指令的执行周期长短不同（如简单加法 vs 复杂乘法），后进入流水线的指令可能先于先进入的指令完成执行，这种乱序特性会给精确异常的判定和处理带来挑战。
+- **Imprecise Exceptions（非精确异常）**：与 “精确异常” 相对的异常处理方式，不严格保证能准确定位引发异常的指令，也不确保异常发生前所有指令均已正确执行、后续指令均未产生影响。其核心特点是硬件实现简单，但需软件（处理程序）承担更多异常分析和状态恢复工作。
+- **multiple-issue out-of-order pipelines（多发射乱序流水线）**：复杂的 CPU 流水线架构，“多发射” 指每个周期可同时发射多条指令进入流水线，“乱序” 指指令执行和完成的顺序可能与指令在程序中的原始顺序不一致。此类流水线因指令并行度高、执行顺序复杂，无法通过 “非精确异常” 的简单停止 + 保存状态方式保证程序正确性，故不适用该异常处理机制。
+>>>>>>> 127dcf5cd241313b30dd958c4e1ccf941572fc95
