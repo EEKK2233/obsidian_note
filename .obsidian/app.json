@@ -7,5 +7,6 @@
   "autoPairBrackets": false,
   "useMarkdownLinks": true,
   "strictLineBreaks": false,
-  "readableLineLength": true
+  "readableLineLength": true,
+  "useTab": true
 }

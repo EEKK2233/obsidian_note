@@ -8,63 +8,48 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7f3f03428a41bdf1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "计组实验1-10/SCCPU.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "SCCPU"
-            }
-          },
-          {
             "id": "783ff0a605408ce0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "huaweiICT/题库.md",
+                "file": "huaweiICT/华为ICT大赛（实践赛）-昇腾Al赛道理论考试题及答案.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "题库"
+              "title": "华为ICT大赛（实践赛）-昇腾Al赛道理论考试题及答案"
             }
           },
           {
-            "id": "e776534924c833b4",
+            "id": "daeaa9e4e0f2b568",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "未命名.md",
+                "file": "huaweiICT/基本概念.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "基本概念"
             }
           },
           {
-            "id": "d25a35c16593ad96",
+            "id": "42892915d3a040df",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "计组/CacheExample.md",
+                "file": "华为服务.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CacheExample"
+              "title": "华为服务"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -185,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "未命名.md",
+                "file": "huaweiICT/华为ICT大赛（实践赛）-昇腾Al赛道理论考试题及答案.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "未命名 的大纲"
+              "title": "华为ICT大赛（实践赛）-昇腾Al赛道理论考试题及答案 的大纲"
             }
           },
           {
@@ -237,10 +222,15 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "e776534924c833b4",
+  "active": "783ff0a605408ce0",
   "lastOpenFiles": [
+    "华为服务.md",
+    "huaweiICT/华为ICT大赛（实践赛）-昇腾Al赛道理论考试题及答案.md",
+    "huaweiICT/基本概念.md",
+    "huaweiICT/真题笔记.md",
     "huaweiICT/题库.md",
-    "未命名.md",
+    "未命名.base",
+    "未命名 1.md",
     "Linux/command.md",
     "huaweiICT/华为处理器.md",
     "计组/CacheExample.md",
@@ -262,10 +252,8 @@
     "存储器.png",
     "SPARCstation20's内存条(模块.md",
     "C++/实验中间结果保存与恢复（Git 最简教学版）.md",
-    "huaweiICT/真题笔记.md",
     "huaweiICT/CANN.md",
     "huaweiICT/笔记.md",
-    "未命名.base",
     "C++/t2.md",
     "huaweiICT/人工智能框架学习笔记-MindSpore专注版.md",
     "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
@@ -273,9 +261,6 @@
     "copilot/copilot-custom-prompts/Remove URLs.md",
     "copilot/copilot-custom-prompts/Generate glossary.md",
     "copilot/copilot-custom-prompts/Generate table of contents.md",
-    "copilot/copilot-custom-prompts/Make longer.md",
-    "copilot/copilot-custom-prompts/Make shorter.md",
-    "copilot/copilot-custom-prompts/Emojify.md",
     "copilot/copilot-custom-prompts",
     "copilot",
     "Excalidraw",
