@@ -478,4 +478,131 @@ Cache的内容是主存储器中部分内容的映象。
 #### Address Subdivision
 ![Address Subdivision](AddressSubdivision.png)
 ### Cache Example
-[Cache Example](CacheExample.md)
+#### CacheExample
+[Cache Example](CacheExample.md#CacheExample)
+#### Example 1
+1 KB Direct Mapped Cache with 32 B Blocks
+[Cache Example](CacheExample.md#1_KB_Direct_Mapped_Cache_with_32_B_Blocks)
+#### Example2
+[Cache Example](CacheExample.md#ex)
+### Block Size Considerations
+- Larger blocks should reduce miss rate
+	-  Due to spatial locality
+-  But in a fixed-sized cache
+	-  Larger blocks -> fewer of them
+		-  More competition -> increased miss rate
+	-  Larger blocks -> pollution
+-  Larger miss penalty
+	-  Can override benefit of reduced miss rate
+	-  Early restart and critical-word-first can help
+#### Miss Rate Versus Block Size
+![Miss Rate Versus Block Size](MissRateVersusBlockSize.png)
+
+### Cache Misses
+-  On cache hit, CPU proceeds normally
+-  On cache miss
+	-  Stall the CPU pipeline
+	-  Fetch block from next level of hierarchy
+	-  Instruction cache miss
+		-  Restart instruction fetch
+	-  Data cache miss
+		-  Complete data access
+#### Sources of Cache Misses(3'c)
+- **Compulsory Miss** (cold start, first reference):**强制性失效（又称冷启动失效、首次访问失效）**
+	-  *1st access to a block*, not a lot you can do about it.
+		-  If running billions of instructions, compulsory misses are insignificant
+-  **Capacity Miss**:
+	-  Cache cannot contain all blocks accessed by theprogram
+		-  Misses that would not occur with infinite cache
+-  **Conflict Miss (collision)**:
+	-  Multiple memory locations mapped to same cache set
+		-  Misses that would not occur with ideal fully associative cache
+### Handling Stores with Write
+
+#### hit
+- Store instructions write to memory,changing values
+- Need to make sure cache and memory have same values on writes: 2 policies
+1) Write-Through Policy //写Cache和主存, Cache和主存内容一致
+2) Write-Back Policy //只写Cache, 增加dirty标记位
+##### Write-Through Cache
+- Write both values in cache and in memory
+- Write buffer stops CPU from stalling if memory cannot keep up
+- Write buffer may have multiple entries to absorb bursts of writes
+
+###### Write-Through
+ On data-write hit, could just update the block in
+cache
+ But then cache and memory would be inconsistent
+ Write through: also update memory
+ But makes writes take longer
+ e.g., if base CPI = 1, 10% of instructions are stores,
+write to memory takes 100 cycles
+ Effective CPI = 1 + 0.1×100 = 11
+ Solution: write buffer
+ Holds data waiting to be written to memory
+ CPU continues immediately
+ Only stalls on write if write buffer is already full
+##### Write-Back Cache
+ Store/cache hit, write data
+in cache only & set dirty bit
+ Memory has stale value
+ Store/cache miss, read
+data from memory, then
+update and set dirty bit
+ “Write-allocate” policy
+ On any miss, write back
+evicted block, only if dirty.
+Update cache with new
+block and clear dirty bit.
+###### Write-Back
+ Alternative: On data-write hit, just update
+the block in cache
+ Keep track of whether each block is dirty
+ When a dirty block is replaced
+ Write it back to memory
+ Can use a write buffer to allow replacing block
+to be read first
+#### Miss 
+#### Write Policy Choices
+ Cache hit:
+ write through: writes both cache & memory on every access
+ Generally higher memory traffic but simpler pipeline & cache design
+ write back: writes cache only, memory `written only when dirty
+entry evicted
+ A dirty bit per line reduces write-back traffic
+ Must handle 0, 1, or 2 accesses to memory for each load/store
+ Cache miss:
+ no write allocate: only write to main memory
+ write allocate (aka fetch on write): fetch into cache
+ Common combinations:
+ write through and no write allocate
+ write back with write allocate
+
+# Large and Fast : Exploiting Memory Hierarchy
+## Cache (Performance) Terms
+ Hit rate: fraction of accesses that hit in the cache
+ Miss rate: 1 – Hit rate
+ Miss penalty: time to replace a block from lower level in memory hierarchy to cache
+ Hit time: time to access cache memory (including tag comparison)
+
+## Main Memory Supporting Caches
+ Use DRAMs for main memory
+ Fixed width (e.g., 1 word)
+ Connected by fixed-width clocked bus
+ Bus clock is typically slower than CPU clock
+ Example cache block read
+ 1 bus cycle for address transfer
+ 15 bus cycles per DRAM access
+ 1 bus cycle per data transfer
+ For 4-word block, 1-word-wide DRAM
+ Miss penalty = 1 + 4×15 + 4×1 = 65 bus cycles
+ Bandwidth = 16 bytes / 65 cycles = 0.25 B/cycle
+## Measuring Cache Performance
+ Components of CPU time
+ Program execution cycles
+ Includes cache hit time
+ Memory stall cycles
+ Mainly from cache misses
+ With simplifying assumptions:
+$$Memory stall cycles= \frac{Memory accesses}{Program} * Miss rate * Miss penalty$$
+### [Cache Performance Example](CacheExample.md#CachePerformanceExample) 
