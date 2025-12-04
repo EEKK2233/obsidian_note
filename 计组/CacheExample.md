@@ -45,14 +45,71 @@ assuming a 32-bit address?
 -  total cache size/actual cache data = 1.25
 
 ## CachePerformanceExample 
- Given
- I-cache miss rate = 2%
- D-cache miss rate = 4%
- Miss penalty = 100 cycles
- Base CPI (ideal cache) = 2
- Load & stores are 36% of instructions
- Miss cycles per instruction
- I-cache: 0.02 × 100 = 2
- D-cache: 0.36 × 0.04 × 100 = 1.44
- Actual CPI = 2 + 2 + 1.44 = 5.44
- Ideal CPU is 5.44/2 =2.72 times faster
+-  **Given**
+	-  I-cache miss rate = 2%
+	-  D-cache miss rate = 4%
+	-  Miss penalty = 100 cycles
+	-  Base CPI (ideal cache) = 2
+	-  Load & stores are 36% of instructions
+-  **Miss cycles per instruction**
+	-  I-cache: 0.02 × 100 = 2
+	-  D-cache: 0.36 × 0.04 × 100 = 1.44
+-  Actual CPI = 2 + 2 + 1.44 = 5.44
+-  Ideal CPU is 5.44/2 =2.72 times faster
+
+## MultilevelCacheExample
+-  **Given**
+	-  CPU base CPI = 1, clock rate = 4GHz
+	-  Miss rate/instruction = 2%
+	-  Main memory access time = 100ns
+-  **With just primary cache**
+	-  Miss penalty = 100ns/0.25ns = 400 cycles
+	-  Effective CPI = 1 + 0.02 × 400 = 9
+
+*解*: Now add L-2 cache
+ Access time = 5ns
+ Global miss rate to main memory = 0.5%
+ Primary miss with L-2 hit
+ Penalty = 5ns/0.25ns = 20 cycles
+ Primary miss with L-2 miss
+ Extra penalty = 500 cycles
+ CPI = 1 + 0.02 × 20 + 0.005 × 400 = 3.4
+ Performance ratio = 9/3.4 = 2.6
+
+
+## ExampleProblem
+ Assume a 500 MHz machine with
+ base CPI 1.0
+ main memory access time 200 ns.
+ miss rate 5%
+ How much faster will the machine be if we add a second-level
+cache with 20ns access time that decreases the miss rate to 2%?
+
+*Solution*
+
+ Miss penalty to main = 200 ns / (2 ns / clock cycle) = 100 clock cycles
+ Effective CPI with one level of cache
+= Base CPI + Memory-stall cycles per instruction
+= 1.0 + 5%  100 = 6.0
+ With two levels of cache, miss penalty to second-level cache
+= 20 ns / (2 ns / clock cycle) = 10 clock cycles
+ Effective CPI with two levels of cache
+= Base CPI + Primary stalls per instruction
++ Secondary stall per instruction
+= 1 + 5%  10 + 2%  100 = 3.5
+ Therefore, machine with secondary cache is faster by a factor of
+6.0 / 3.5 = 1.71
+
+## CacheHitAndMiss
+F or the following repeating sequence of l w addresses (given in hexadecimal),determine the effective miss rate if the sequence is input to the following caches,ignoring startup effects (i.e., compulsory misses). Assuming least recently used(LRU) replacement for associative caches. The cache capacity is 16 words.
+			*74 A0 78 38C A C 84 88 8C 7C 34 38 13C 388 18C*
+(a) direct mapped cache, b = 1 word
+(b) fully associative cache, b = 2 words
+
+(a) direct mapped cache, b = 1 word
+*Solution*:
+1st loop: all missed
+2nd loop: Hit: A0, AC, 84
+Miss Rate = 11 /14 = 79%
+![](CacheDirect.png)
+

@@ -1,0 +1,1 @@
+持续监视某一个变量:display v_name

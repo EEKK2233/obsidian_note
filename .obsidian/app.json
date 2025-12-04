@@ -1,6 +1,6 @@
 {
   "promptDelete": true,
-  "vimMode": true,
+  "vimMode": false,
   "focusNewTab": true,
   "showLineNumber": true,
   "autoConvertHtml": true,
@@ -8,5 +8,6 @@
   "useMarkdownLinks": true,
   "strictLineBreaks": false,
   "readableLineLength": true,
-  "useTab": true
+  "useTab": true,
+  "newFileLocation": "current"
 }

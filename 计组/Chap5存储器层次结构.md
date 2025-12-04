@@ -478,13 +478,13 @@ Cache的内容是主存储器中部分内容的映象。
 #### Address Subdivision
 ![Address Subdivision](AddressSubdivision.png)
 ### Cache Example
-#### CacheExample
-[Cache Example](CacheExample.md#CacheExample)
-#### Example 1
+#### E_[Cache Example](CacheExample.md#CacheExample)
+
+#### E_[Cache Example](CacheExample.md#1_KB_Direct_Mapped_Cache_with_32_B_Blocks)
 1 KB Direct Mapped Cache with 32 B Blocks
-[Cache Example](CacheExample.md#1_KB_Direct_Mapped_Cache_with_32_B_Blocks)
-#### Example2
-[Cache Example](CacheExample.md#ex)
+
+#### E_[Cache Example](CacheExample.md#ex)
+
 ### Block Size Considerations
 - Larger blocks should reduce miss rate
 	-  Due to spatial locality
@@ -530,79 +530,323 @@ Cache的内容是主存储器中部分内容的映象。
 - Write buffer may have multiple entries to absorb bursts of writes
 
 ###### Write-Through
- On data-write hit, could just update the block in
+-  On data-write hit, could just update the block in
 cache
- But then cache and memory would be inconsistent
- Write through: also update memory
- But makes writes take longer
- e.g., if base CPI = 1, 10% of instructions are stores,
+-  But then cache and memory would be inconsistent
+-  Write through: also update memory
+-  But makes writes take longer
+-  e.g., if base CPI = 1, 10% of instructions are stores,
 write to memory takes 100 cycles
- Effective CPI = 1 + 0.1×100 = 11
- Solution: write buffer
- Holds data waiting to be written to memory
- CPU continues immediately
- Only stalls on write if write buffer is already full
+-  Effective CPI = 1 + 0.1×100 = 11
+-  Solution: write buffer
+-  Holds data waiting to be written to memory
+-  CPU continues immediately
+-  Only stalls on write if write buffer is already full
 ##### Write-Back Cache
- Store/cache hit, write data
+-  Store/cache hit, write data
 in cache only & set dirty bit
- Memory has stale value
- Store/cache miss, read
+-  Memory has stale value
+-  Store/cache miss, read
 data from memory, then
 update and set dirty bit
- “Write-allocate” policy
- On any miss, write back
+-  “Write-allocate” policy
+-  On any miss, write back
 evicted block, only if dirty.
 Update cache with new
 block and clear dirty bit.
 ###### Write-Back
- Alternative: On data-write hit, just update
+-  Alternative: On data-write hit, just update
 the block in cache
- Keep track of whether each block is dirty
- When a dirty block is replaced
- Write it back to memory
- Can use a write buffer to allow replacing block
+-  Keep track of whether each block is dirty
+-  When a dirty block is replaced
+-  Write it back to memory
+-  Can use a write buffer to allow replacing block
 to be read first
 #### Miss 
 #### Write Policy Choices
- Cache hit:
- write through: writes both cache & memory on every access
- Generally higher memory traffic but simpler pipeline & cache design
- write back: writes cache only, memory `written only when dirty
+-  Cache hit:
+-  write through: writes both cache & memory on every access
+-  Generally higher memory traffic but simpler pipeline & cache design
+-  write back: writes cache only, memory `written only when dirty
 entry evicted
- A dirty bit per line reduces write-back traffic
- Must handle 0, 1, or 2 accesses to memory for each load/store
- Cache miss:
- no write allocate: only write to main memory
- write allocate (aka fetch on write): fetch into cache
- Common combinations:
- write through and no write allocate
- write back with write allocate
+-  A dirty bit per line reduces write-back traffic
+-  Must handle 0, 1, or 2 accesses to memory for each load/store
+-  Cache miss:
+-  no write allocate: only write to main memory
+-  write allocate (aka fetch on write): fetch into cache
+-  Common combinations:
+-  write through and no write allocate
+-  write back with write allocate
 
 # Large and Fast : Exploiting Memory Hierarchy
 ## Cache (Performance) Terms
- Hit rate: fraction of accesses that hit in the cache
- Miss rate: 1 – Hit rate
- Miss penalty: time to replace a block from lower level in memory hierarchy to cache
- Hit time: time to access cache memory (including tag comparison)
+-  Hit rate: fraction of accesses that hit in the cache
+-  Miss rate: 1 – Hit rate
+-  Miss penalty: time to replace a block from lower level in memory hierarchy to cache
+-  Hit time: time to access cache memory (including tag comparison)
 
 ## Main Memory Supporting Caches
- Use DRAMs for main memory
- Fixed width (e.g., 1 word)
- Connected by fixed-width clocked bus
- Bus clock is typically slower than CPU clock
- Example cache block read
- 1 bus cycle for address transfer
- 15 bus cycles per DRAM access
- 1 bus cycle per data transfer
- For 4-word block, 1-word-wide DRAM
- Miss penalty = 1 + 4×15 + 4×1 = 65 bus cycles
- Bandwidth = 16 bytes / 65 cycles = 0.25 B/cycle
+-  Use DRAMs for main memory
+-  Fixed width (e.g., 1 word)
+-  Connected by fixed-width clocked bus
+-  Bus clock is typically slower than CPU clock
+-  Example cache block read
+-  1 bus cycle for address transfer
+-  15 bus cycles per DRAM access
+-  1 bus cycle per data transfer
+-  For 4-word block, 1-word-wide DRAM
+-  Miss penalty = 1 + 4×15 + 4×1 = 65 bus cycles
+-  Bandwidth = 16 bytes / 65 cycles = 0.25 B/cycle
 ## Measuring Cache Performance
- Components of CPU time
- Program execution cycles
- Includes cache hit time
- Memory stall cycles
- Mainly from cache misses
- With simplifying assumptions:
+-  Components of CPU time
+-  Program execution cycles
+-  Includes cache hit time
+-  Memory stall cycles
+-  Mainly from cache misses
+-  With simplifying assumptions:
 $$Memory stall cycles= \frac{Memory accesses}{Program} * Miss rate * Miss penalty$$
-### [Cache Performance Example](CacheExample.md#CachePerformanceExample) 
+### E_[Cache Performance Example](CacheExample.md#CachePerformanceExample) 
+
+## Replacement Policy
+
+Direct mapped: no choice
+-  Set associative
+-  Prefer non-valid entry, if there is one
+-  Otherwise, choose among entries in the set
+-  Least-recently used (LRU)
+-  Choose the one unused for the longest time
+-  Simple for 2-way, manageable for 4-way, too hard
+beyond that
+-  Random
+-  Gives approximately the same performance
+as LRU for high associativity
+
+## Multilevel Caches
+
+Primary cache attached to CPU
+-  Small, but fast
+-  Level-2 cache services misses from primary cache
+-  Larger, slower, but still faster than main memory
+-  Main memory services L-2 cache misses
+-  Some high-end systems include L-3 cache
+
+### 多级cache的性能
+- 采用L2 Cache的系统，其缺失损失的计算如下：
+	- 若L2 Cache包含所请求信息，则缺失损失为L2 Cache访问时间
+	- 否则访问主存，并取到L1 Cache和L2 Cache（缺失损失更大）
+
+- 例：某处理器在无cache缺失时CPI为1，时钟频率为5GHz。假定访问一次主存的时间（包括所有的缺失处理）为100ns，平均每条指令在L1 Cache中的缺失率为2%。若增加一个L2 Cache，其访问时间为5ns，而且容量足够大到使全局缺失率减为0.5%，问处理器执行指令的速度提高了多少？
+	*解*：如果只有*一级Cache*，则缺失只有一种。即L1缺失(需访问主存)，其缺失损失为：100nsx5GHz=500个时钟，       CPI=1+500x2%=11.0。
+	  如果有*二级Cache*，则有两种缺失：
+         L1缺失(需访问L2 Cache)：5nsx5GHz=25个时钟
+         L1和L2都缺失(需访问主存)：500个时钟
+		因此，CPI=1+25x2%+500x0.5%=4.0
+		二者的性能比为11.0/4.0=2.8倍！
+
+#### E_[Example](CacheExample#MultilevelCacheExample)
+#### E_[Example_2](CacheExample#ExampleProblem)
+
+### Multilevel Cache Considerations
+
+-  Primary cache//`一级缓存`
+	-  Focus on minimal hit time
+-  L-2 cache
+	-  Focus on low miss rate to avoid main memory
+access
+-  Hit time has less overall impact
+-  Results
+	-  L-1 cache usually smaller than a single cache
+	-  L-1 block size smaller than L-2 block size
+
+### Interactions with Advanced CPUs
+-  Out-of-order CPUs can execute instructions during cache miss
+	-  Pending store//`待处理的store指令` stays in load/store unit
+	-  Dependent instructions wait in reservation stations
+		-  Independent instructions continue
+-  Effect of miss depends on program data flow
+	-  Much harder to analyse
+	-  Use system simulation
+
+# Virtual Machines
+
+## Virtual Machines
+ Host computer emulates guest operating system and machine resources
+	 Improved isolation of multiple guests
+	 Avoids security and reliability problems
+	 Aids sharing of resources
+ Virtualization has some performance impact
+	 Feasible with modern high-performance comptuers
+ Examples
+	 IBM VM/370 (1970s technology!)
+	 VMWare
+	 Microsoft Virtual PC
+
+## Virtual Machine Monitor
+ Maps virtual resources to physical resources
+	 Memory, I/O devices, CPUs
+ Guest code runs on native machine in user mode
+	 Traps to VMM on privileged instructions and access to protected resources
+ Guest OS may be different from host OS
+ VMM handles real I/O devices
+	 Emulates generic virtual I/O devices for guest
+
+## Example: Timer Virtualization
+ In native machine, on timer interrupt
+ OS suspends current process, handles
+interrupt, selects and resumes next process
+ With Virtual Machine Monitor
+ VMM suspends current VM, handles interrupt,
+selects and resumes next VM
+ If a VM requires timer interrupts
+ VMM emulates a virtual timer
+ Emulates interrupt for VM when physical timer
+interrupt occurs
+
+## Instruction Set Support
+ User and System modes
+ Privileged instructions only available in
+system mode
+ Trap to system if executed in user mode
+ All physical resources only accessible
+using privileged instructions
+ Including page tables, interrupt controls, I/O
+registers
+ Renaissance of virtualization support
+ Current ISAs (e.g., x86) adapting
+
+# Virtual Memery
+
+## What do we need Virtual Memory for?
+### reason1 Adding Disks to Hierarchy
+- Need to devise a mechanism to “connect” memory and disk in the memory hierarchy
+	需要设计一种机制，以在存储体系结构中 “连接” 内存与磁盘。
+### reason2 Simplifying Memory for Apps
+ Applications should see the straightforward memory layout we saw earlier ->
+ User-space applications should think they own all of memory
+ So we give them a virtual view of memory
+
+### reason3 Protection Between Processes
+ With a bare system, addresses issued with loads/stores are real physical addresses
+ This means any program can issue any address, therefore can access any part of memory, even areas which it doesn’t own
+	 Ex: The OS data structures
+ We should send all addresses through a mechanism that the OS controls, before they make it out to DRAM - a translation mechanism
+
+## Virtual Memory
+ Use main memory as a “cache” for secondary (disk) storage
+	 Managed jointly by CPU hardware and the operating system (OS)
+ Programs share main memory
+	 Each gets a private virtual address space holding its frequently used code and data
+	 Protected from other programs
+ CPU and OS translate virtual addresses to physical addresses
+	 VM “**block**” is called a **page**
+	 VM translation “**miss**” is called a **page fault**
+
+## VM + Supervisor Mode combine to Create Isolation
+ Supervisor mode is only entered into at the trap handler
+ So its always known (and hopefully correct) code that is part of the core operating system
+ This is why "syscall" generates an exception
+ Only Supervisor mode can change Virtual Memory mappings
+ So only the core of the operating system can bypass the protections imposed on memory
+ These are the invariants necessary for isolation
+ Anything that can affect these invariants completely compromises the security of the system
+
+## Address Spaces
+ The set of addresses labeling all of memory that we can access
+ Now, *2 kinds*:
+	 Virtual Address Space - the set of addresses that the *user program knows* about
+	 Physical Address Space - the set of addresses that map to *actual physical cells in memory*
+		 Hidden from user applications
+ So, we need a way to *map between these two address spaces*
+
+## Blocks vs. Pages
+
+ In caches, we dealt with *individual blocks*
+	 Usually ~64B on modern systems
+	 We could “divide” memory into a set of blocks
+ In VM, we deal with *individual pages*
+	 Usually ~4 KB on modern systems
+	 Now, we’ll “divide” memory into a set of pages
+ Common point of *confusion*: Bytes, Words, Blocks, Pages are all just *different ways of looking at memory*!
+
+## Mapping Virtual Memory to Physical Memory
+
+ Divide Memory into equal sized “chunks” (say, 4KB each)
+ Any chunk of Virtual Memory assigned to any chunk of Physical Memory (“page”)
+![](mappingVirmen2phymem.png)
+
+- 虚地址空间一般要比实际物理空间大得多
+![](virandmem.png)
+
+### Page Tables
+> [!note]
+> **页表（Page table）**：虚拟内存管理的核心数据结构，存储虚拟地址与物理地址的映射关系，帮助 CPU 将程序使用的虚拟地址转换为实际访问内存的物理地址。
+
+- **page table reg** : this hardware registers tells VM system where to fing the page table
+![pagetable](pagetable.png)
+
+![PageTables](PageTable_2.png)
+
+### Address Translation
+ Page table is a large data structure in memory
+ Two memory accesses for every load, store, or instruction fetch!!!
+- 每执行一次加载（load）、存储（store）或指令读取（instruction fetch）操作，都需要两次内存访问！！！
+ Virtually addressed cache?
+	 synonym problem^[(1. **同义问题（synonym problem）**：又称 “别名问题”，指同一物理地址对应的多个虚拟地址（即 “同义地址”）同时存入缓存时，可能导致缓存数据不一致的问题（例如修改一个虚拟地址对应的缓存块，另一个同义虚拟地址对应的缓存块仍为旧数据）。)]
+ Cache the address translations?
+![](virmemtrans.png)
+
+### Page Fault Penalty
+*代价极高, 要访问外存, 代价通常为上百万个时钟周期*
+ On page fault, the page must be fetched from disk
+	 Takes *millions of clock cycles*
+	 Handled by OS code
+ Try to *minimize page fault rate*
+	 Fully associative placement
+	 Smart replacement algorithms
+
+### Address Translation Mechanisms
+![](AddrTransMec.png)
+
+ Mapping info. for each program is kept in *a page table*
+ A *page table entry (PTE)* *indicates* the mapping of the virtual page to the physical page
+ A *valid bit* indicates whether the mapping is current or not
+ If there is a memory reference (recall that a reference is a virtual address) to a page with the valid bit off in its corresponding PTE, we have a page fault
+ this means we’ll have to *go to disk* to fetch the page
+ The PTE also contains *a dirty bit* to indicate whether the page has been modified since it was fetched
+
+### Fast Translation Using a TLB
+TLB (快表):类似于Cache, 相当于PageTable的高速缓存, 省去访问慢表的时间.
+
+# 数据校验
+## 汉明码
+### 汉明码三要素
+汉明码的组成需增添？位检测位
+- 2k ≥ n + k + 1
+检测位的位置？
+- $2^i$
+检测位的取值？
+- 检测位的取值与该位所在的检测“小组” 中
+承担的奇偶校验任务有关
+### 汉明码的分组
+*基本思想*: n位数据位和k位校验位按某种方式排列为一个（n+k）位的码字，将该码字中每个出错位的位置与故障字的数值建立关系，通过故障字的值确定该码字中哪一位发生了错误，并将其取反来纠正。
+
+根据上述基本思想，按以下规则来解释各故障字的值。
+- 规则1： 若故障字每位全部是0，则表示没有发生错误。
+- 规则2：若故障字中有且仅有一位为1，则表示校验位中有一位出错，因而不需纠正。
+- 规则3：若故障字中多位为1，则表示有一个数据位出错，其在码字中的出错位置由故障字的数值来确定。纠正时只要将出错位取反即可。
+
+#### 以8位数据进行单个位检错和纠错为例说明。
+以8位数据进行单个位检错和纠错为例说明。
+假定8位数据M= M8M7M6M5M4M3M2M1，4位校验位P=P4P3P2P1。根据规则将M和P按一定的规律排到一个12位码字中。
+- 据规则1，故障字为0000时，表示无错。
+- 据规则2，故障字中有且仅有一位为1时，表示校验位中有一位出错。此时，故障字只可能是0001、0010、0100、1000，将这四种状态分别代表校验位中P1、P2、P3、P4位发生错误，因此，它们分别位于码字的第1、2、4、8位。
+- 据规则3，将其他多位为1的故障字依次表示数据位M1~M8发生错误的情况。因此，数据位M1~M8分别位于码字的第0011(3)、0101(5)、0110(6)、0111(7)、1001(9)、1010(10)、1011(11)、1100(12)位。即码字的排列为： M8M7M6M5P4M4M3M2P3M1P2P1
+这样，得到故障字S=S4S3S2S1的各个状态和出错情况的对应关系表，可根据这种对应关系对整个数据进行分组。
+#### 汉明校验码分组情况
+![](以8位数据进行单个位检错和纠错为例说明.png)
+
+
+![](校验位的生成和检错纠错.png)
+
+
+## 单纠错和双检错码
